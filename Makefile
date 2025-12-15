@@ -69,27 +69,14 @@ debug:
 release:
 	$(MAKE) BUILD=release
 
-install: release
-	install -d $(PREFIX)/bin
-	install -m 755 $(BIN_DIR)/$(TARGET) $(PREFIX)/bin/
-
-uninstall:
-	@rm -f $(PREFIX)/bin/$(TARGET)
-
 clean:
 	@rm -rf $(OBJ_DIR)
 	# rm -f $(TEST_OBJS) $(TEST_TARGETS)
 
 help:
-	@echo "Unix Shell Emulator Build System"
 	@echo "Available targets:"
 	@echo "  all       - Build the project (default)"
-	@echo "  debug     - Build with debug symbols"
-	@echo "  release   - Build with optimizations"
 	@echo "  test      - Run tests"
-	@echo "  docs      - Generate documentation"
-	@echo "  install   - Install to system"
-	@echo "  uninstall - Remove from system"
 	@echo "  clean     - Remove build artifacts"
 	@echo "  help      - Show this help"
 

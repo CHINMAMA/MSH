@@ -95,6 +95,7 @@ void MSH_CreateContext(void) {
 void MSH_FreeContext(void) {
     MSH_FreeEnv();
     MSH_ClearHistory();
+    VFS_Clear();
     free(MSH_ExecContext_g->cwd);
     free(MSH_ExecContext_g);
 }

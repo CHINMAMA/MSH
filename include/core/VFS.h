@@ -10,17 +10,6 @@ typedef enum {
     VFS_FILE
 } VFS_NodeType;
 
-// typedef struct VFS_node {
-//     VFS_NodeType type;
-//     char *name;
-//     struct VFS_node *parent;
-//     union 
-//     {
-//         struct VFS_node **children;
-//         char *data;
-//     };
-// } VFS_node;
-
 typedef struct {
     char *xml_path;
     xmlDocPtr doc;

@@ -126,3 +126,9 @@ char *VFS_GetPath(xmlNodePtr node) {
 char *VFS_GetCWD(void) {
     return MSH_ExecContext_g->cwd;
 }
+
+void VFS_Clear(void) {
+    if (!MSH_ExecContext_g || !MSH_ExecContext_g->vfs) { return; }
+    xmlFreeDoc(MSH_ExecContext_g->vfs->doc);
+    xmlCleanupParser();
+}
